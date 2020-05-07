@@ -39,16 +39,16 @@ In RHEL8.0 Firewall should be stop (systemctl stop firewalld)
   
 ## 3.TUNNELING
   For tunneling I'm using ngrok you can use this application or similar application in RHEL8
- `*./ngrok https 8080*` this command will help to run a tunnel which will help to connect the jenkins to outside world.
+ `./ngrok https 8080` this command will help to run a tunnel which will help to connect the jenkins to outside world.
  
 ## 4.WEBHOOK
   In your repository there is an option of settings go to Settings/Webhooks and add webhook there 
   For adding webhook use the tunneling ip which was provided by ngrok:
                   `https://ngrok_ip/github-webhook/`
   
-## 5.creating the production job in jenkins
-    create a job and go to configure of your job and fill the data provided in image and give url of your *Git repository/master branch* in SCM and select the branch master.
-    Next go to pollscm 
+## 5.creating the production job in jenkins:
+  create a job and go to configure of your job and fill the data provided in image and give url of your *Git repository/master branch*     in SCM and select the branch master.
+  Next go to pollscm 
     
     IN EXECUTE SHELL FOLLOW THESE COMMANDS PROVIDED IN IMAGE
 
