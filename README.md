@@ -30,11 +30,16 @@ In RHEL8.0 Firewall should be stop (systemctl stop firewalld)
 
 
 ## 1.CREATE GIT REPOSITORY
-
+![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(74).png)
 
 ## 2.GIVING JENKINS POWER TO RUN COMMAND ON REDHAT LINUX 8
 
   Editing the file *sudoers* in your RHEL8.0
+  ![Sudoer File](https://github.com/Arun878/images/blob/master/Screenshot%20(75).png)
+  
+  and at the end add this line
+  
+  `jenkins ALL=NOPASSWD:ALL`
   
   
 ## 3.TUNNELING
@@ -47,14 +52,19 @@ In RHEL8.0 Firewall should be stop (systemctl stop firewalld)
                   `https://ngrok_ip/github-webhook/`
   
 ## 5.creating the production job in jenkins:
-  create a job and go to configure of your job and fill the data provided in image and give url of your *Git repository/master branch*     in SCM and select the branch master.
-  Next go to pollscm 
-    
-    IN EXECUTE SHELL FOLLOW THESE COMMANDS PROVIDED IN IMAGE
+  create a job and go to configure of your job and fill the data provided in image and give url of your *Git repository/master branch*     in SCM and select the branch master. 
+  
+  ## JOB_1:
+  ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(76).png)
+  ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(77).png)
 
 ## 6.Creating the developer Job in Jenkins
   Same as Production Job only there is a difference is select the branch to deploy
   Remote trigger in Build trigger because with this we can trigger this job remotely and as soon as we push this job will run automatically.
+  
+  ## JOB_2:
+  ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(78).png)
+  ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(79).png)
   
   
 ## 7.MERGING JOB in jenkins
@@ -63,7 +73,15 @@ In RHEL8.0 Firewall should be stop (systemctl stop firewalld)
   This concept is known as chaining as soon as developer build job will run successfully this build will start automatically
   In this build we will merge the content of the deploy branch with master.
   
-  Provide these commands in your configure section 
+  ## JOB_3:
+   ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(80).png)
+   ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(81).png)
+   ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(82).png)
+   
+   
+   Finally the QAT Team merge the branch to master using the script:
+   
+   ![Image of Repo](https://github.com/Arun878/images/blob/master/Screenshot%20(84).png)
   
   
   
