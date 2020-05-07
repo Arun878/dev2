@@ -9,23 +9,23 @@ In this project there are two environment created using docker
 
 For making this AUTOMATED(END-END) we are using jenkins
 
-IN GIT HUB REPO :
+## IN GIT HUB REPO :
 Consider there are two branches master and deploy according to my repository and whatever happen in the master is showed in Production Environment and changes made in deploy is shown in Testing Environment
 
-IN GIT BASH:
+## IN GIT BASH:
 Supposing user has created two branches in git bash and using remote linked to the origin account github/user_name/user_content/branch_name/.com 
 supposing user commit and pushed into github
 
 
-STEPS TO MAKE END TO END AUTOMATE:
+## STEPS TO MAKE END TO END AUTOMATE:
 
 PreRequisite:
+
 Server OS(REHL8/etc)
-install httpd
-Run httpd command (systemctl start httpd) 
 docker should be installed
+httpd image for docker
 GIT Bash
-In RHEL8.0 Firewall should be stop (systemctl stop firewalld)
+In RHEL8.0 Firewall should be stop (`systemctl stop firewalld`)
 
 
 
